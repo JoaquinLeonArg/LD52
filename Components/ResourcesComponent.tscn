@@ -1,0 +1,155 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Fonts/UI/PanelTitle.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Fonts/UI/PanelOption.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Fonts/UI/PanelOptionBold.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scripts/Components/ResourcesComponent.gd" type="Script" id=4]
+
+[node name="ResourcesComponent" type="ColorRect"]
+margin_right = 128.0
+margin_bottom = 136.0
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+script = ExtResource( 4 )
+
+[node name="Title" type="RichTextLabel" parent="."]
+margin_left = -24.0
+margin_top = 6.0
+margin_right = 1256.0
+margin_bottom = 326.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Souls[/center]"
+text = "Souls"
+scroll_active = false
+
+[node name="GraySoulName" type="RichTextLabel" parent="."]
+margin_left = 60.0
+margin_top = 44.0
+margin_right = 700.0
+margin_bottom = 224.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[color=#eeeeee]Gray[/color]"
+text = "Gray"
+scroll_active = false
+
+[node name="RedSoulName" type="RichTextLabel" parent="."]
+margin_left = 60.0
+margin_top = 60.0
+margin_right = 700.0
+margin_bottom = 240.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[color=#cc1111]Red[/color]"
+text = "Red"
+scroll_active = false
+
+[node name="BlueSoulName" type="RichTextLabel" parent="."]
+margin_left = 60.0
+margin_top = 76.0
+margin_right = 700.0
+margin_bottom = 256.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[color=#6666ff]Blue[/color]"
+text = "Blue"
+scroll_active = false
+
+[node name="YellowSoulName" type="RichTextLabel" parent="."]
+margin_left = 60.0
+margin_top = 92.0
+margin_right = 700.0
+margin_bottom = 272.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[color=#dddd22]Yellow[/color]"
+text = "Yellow"
+scroll_active = false
+
+[node name="PinkSoulName" type="RichTextLabel" parent="."]
+margin_left = 60.0
+margin_top = 108.0
+margin_right = 700.0
+margin_bottom = 288.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[color=#cc22cc]Pink[/color]"
+text = "Pink"
+scroll_active = false
+
+[node name="GraySoulCount" type="RichTextLabel" parent="."]
+margin_left = -7.99999
+margin_top = 44.0
+margin_right = 632.0
+margin_bottom = 224.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[right]0[/right]"
+text = "0"
+scroll_active = false
+
+[node name="RedSoulCount" type="RichTextLabel" parent="."]
+margin_left = -7.99999
+margin_top = 60.0
+margin_right = 632.0
+margin_bottom = 240.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[right]0[/right]"
+text = "0"
+scroll_active = false
+
+[node name="BlueSoulCount" type="RichTextLabel" parent="."]
+margin_left = -7.99999
+margin_top = 76.0
+margin_right = 632.0
+margin_bottom = 256.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[right]0[/right]"
+text = "0"
+scroll_active = false
+
+[node name="YellowSoulCount" type="RichTextLabel" parent="."]
+margin_left = -7.99999
+margin_top = 92.0
+margin_right = 632.0
+margin_bottom = 272.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[right]0[/right]"
+text = "0"
+scroll_active = false
+
+[node name="PinkSoulCount" type="RichTextLabel" parent="."]
+margin_left = -7.99999
+margin_top = 108.0
+margin_right = 632.0
+margin_bottom = 288.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[right]0[/right]"
+text = "0"
+scroll_active = false

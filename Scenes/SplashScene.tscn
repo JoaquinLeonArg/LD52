@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Scenes/SplashScene.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Image/godot_logo.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/CreditsScene.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Fonts/Credits/CreditsSectionTitle.tres" type="DynamicFont" id=4]
+
+[node name="SplashScene" type="Node2D"]
+script = ExtResource( 1 )
+transition_scene = ExtResource( 3 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+
+[node name="CreatedWith" type="RichTextLabel" parent="."]
+margin_top = 240.0
+margin_right = 12800.0
+margin_bottom = 752.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[center]Created with[/center]"
+text = "Created with"
+
+[node name="GodotLogo" type="Sprite" parent="."]
+position = Vector2( 640, 400 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )

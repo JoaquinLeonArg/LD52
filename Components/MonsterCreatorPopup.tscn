@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Resources/Image/astrid_profile.png" type="Texture" id=1]
+
+[node name="MonsterCreatorPopup" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -384.0
+margin_bottom = -232.0
+rect_pivot_offset = Vector2( -993, -132 )
+color = Color( 0.231373, 0.239216, 0.301961, 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 208, 248 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
