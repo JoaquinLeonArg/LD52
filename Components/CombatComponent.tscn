@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Components/CombatComponent.gd" type="Script" id=1]
+
+[node name="CombatComponent" type="Control"]
+margin_right = 1280.0
+margin_bottom = 720.0
+script = ExtResource( 1 )
+
+[node name="Player1" type="Position2D" parent="."]
+position = Vector2( 250, 300 )
+
+[node name="Player2" type="Position2D" parent="."]
+position = Vector2( 280, 450 )
+
+[node name="Player3" type="Position2D" parent="."]
+position = Vector2( 220, 150 )
+
+[node name="Player4" type="Position2D" parent="."]
+position = Vector2( 310, 600 )
+
+[node name="Monster1" type="Position2D" parent="."]
+position = Vector2( 986, 300 )
+
+[node name="Monster2" type="Position2D" parent="."]
+position = Vector2( 1016, 450 )
+
+[node name="Monster3" type="Position2D" parent="."]
+position = Vector2( 956, 150 )
+
+[node name="Monster4" type="Position2D" parent="."]
+position = Vector2( 1046, 600 )
+
+[node name="PlayerMonsters" type="Node2D" parent="."]
+
+[node name="EnemyMonsters" type="Node2D" parent="."]

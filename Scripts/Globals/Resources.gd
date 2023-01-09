@@ -11,11 +11,19 @@ const RESOURCE_COLORS = {
 }
 
 const RESOURCE_NAMES = {
-	ResourceType.SOUL_GRAY: "Gray",
-	ResourceType.SOUL_RED: "Red",
-	ResourceType.SOUL_BLUE: "Blue",
-	ResourceType.SOUL_YELLOW: "Yellow",
-	ResourceType.SOUL_PINK: "Pink",
+	ResourceType.SOUL_GRAY: "Bespalt",
+	ResourceType.SOUL_RED: "Helthin",
+	ResourceType.SOUL_BLUE: "Mithrite",
+	ResourceType.SOUL_YELLOW: "Chroiyum",
+	ResourceType.SOUL_PINK: "Xolyx",
+}
+
+const RESOURCE_ICONS = {
+	ResourceType.SOUL_GRAY: "res://Resources/Image/Iconos/fantasma-gris-icono.png",
+	ResourceType.SOUL_RED: "res://Resources/Image/Iconos/fantasma-naranja-icono.png",
+	ResourceType.SOUL_BLUE: "res://Resources/Image/Iconos/fantasma-azul-icono.png",
+	ResourceType.SOUL_YELLOW: "res://Resources/Image/Iconos/fantasma-amarillo-icono.png",
+	ResourceType.SOUL_PINK: "res://Resources/Image/Iconos/fantasma-rosa-icono.png",
 }
 
 var resources = null
@@ -40,3 +48,7 @@ func consume(resource_type: int, amount: int):
 		print_debug("Not enough resource to consume")
 		return
 	self.resources[resource_type] -= amount
+
+
+func gain(resource_type: int, amount: int):
+	self.resources[resource_type] += amount

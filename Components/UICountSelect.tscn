@@ -1,8 +1,0 @@
-[gd_scene format=2]
-
-[node name="UICountSelect" type="Node2D"]
-
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 96.0
-margin_bottom = 32.0
-color = Color( 0.054902, 0.054902, 0.101961, 1 )

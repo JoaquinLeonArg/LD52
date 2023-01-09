@@ -9,25 +9,19 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "UIElement",
-"class": "UIButton",
-"language": "GDScript",
-"path": "res://Scripts/Generic/UIButton.gd"
-}, {
 "base": "Control",
 "class": "UIElement",
 "language": "GDScript",
 "path": "res://Scripts/Generic/UIElement.gd"
 } ]
 _global_script_class_icons={
-"UIButton": "",
 "UIElement": ""
 }
 
 [application]
 
 config/name="LD52"
-run/main_scene="res://Scenes/GameScene.tscn"
+run/main_scene="res://Scenes/SplashScene.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -36,6 +30,10 @@ Global="*res://Scripts/Globals/Global.gd"
 Resources="*res://Scripts/Globals/Resources.gd"
 Plants="*res://Scripts/Globals/Plants.gd"
 Cauldron="*res://Scripts/Globals/Cauldron.gd"
+GameCamera="*res://Scripts/Globals/GameCamera.gd"
+Orders="*res://Scripts/Globals/Orders.gd"
+Inventory="*res://Scripts/Globals/Inventory.gd"
+Potions="*res://Scripts/Globals/Potions.gd"
 
 [display]
 

@@ -9,10 +9,10 @@ func _ready():
 	self.animate_dehover()
 	self.animate_deselect()
 
-	if self.connect("mouse_entered", self, "mouse_entered") != OK:
-		print_debug("Failed to connect mouse_entered")
-	if self.connect("mouse_exited", self, "mouse_exited") != OK:
-		print_debug("Failed to connect mouse_exited")
+	if not self.is_connected("mouse_entered", self, "mouse_entered"):
+		var _err = self.connect("mouse_entered", self, "mouse_entered")
+	if not self.is_connected("mouse_exited", self, "mouse_exited"):
+		var _err = self.connect("mouse_exited", self, "mouse_exited")
 
 
 func mouse_entered():

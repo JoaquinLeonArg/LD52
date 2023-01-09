@@ -1,30 +1,34 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Components/PlantSelectionOption.gd" type="Script" id=1]
-[ext_resource path="res://Fonts/UI/PanelOption.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Resources/Image/astrid_profile.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/UI/PlantName.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Resources/Image/Plants/ramita.svg" type="Texture" id=3]
+[ext_resource path="res://Resources/Image/option_bg.png" type="Texture" id=4]
 [ext_resource path="res://Resources/Image/wall-clock.png" type="Texture" id=5]
 [ext_resource path="res://Resources/Image/right-arrow.png" type="Texture" id=6]
 [ext_resource path="res://Fonts/UI/PanelOptionBold.tres" type="DynamicFont" id=7]
 
-[node name="PlantSelectionOption" type="ColorRect"]
+[node name="PlantSelectionOption" type="Control"]
 margin_left = -160.0
 margin_right = 160.0
 margin_bottom = 32.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-color = Color( 0.133333, 0.12549, 0.180392, 1 )
 script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 160, 16 )
+texture = ExtResource( 4 )
 
 [node name="Icon" type="Sprite" parent="."]
 position = Vector2( 16, 16 )
-scale = Vector2( 0.4, 0.4 )
+scale = Vector2( 0.1, 0.05 )
 texture = ExtResource( 3 )
 
 [node name="Name" type="RichTextLabel" parent="."]
-margin_left = 40.0
+margin_left = 34.0
 margin_top = 7.0
-margin_right = 1000.0
+margin_right = 994.0
 margin_bottom = 327.0
 rect_scale = Vector2( 0.1, 0.1 )
 mouse_filter = 1
@@ -47,10 +51,10 @@ scale = Vector2( 0.02, 0.02 )
 texture = ExtResource( 6 )
 
 [node name="Time" type="RichTextLabel" parent="."]
-margin_left = 297.0
-margin_top = 8.0
-margin_right = 493.0
-margin_bottom = 204.0
+margin_left = 299.0
+margin_top = 6.0
+margin_right = 495.0
+margin_bottom = 202.0
 rect_scale = Vector2( 0.1, 0.1 )
 mouse_filter = 1
 custom_colors/default_color = Color( 1, 1, 1, 1 )

@@ -1,0 +1,8 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[ext_resource path="res://Resources/Font/RonysiswadiArchitect6-X3V9G.ttf" type="DynamicFontData" id=1]
+
+[resource]
+size = 260
+use_filter = true
+font_data = ExtResource( 1 )

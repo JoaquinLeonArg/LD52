@@ -1,16 +1,272 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://Resources/Image/astrid_profile.png" type="Texture" id=1]
+[ext_resource path="res://Resources/Image/caldero-caldero.svg" type="Texture" id=1]
+[ext_resource path="res://Components/BaseButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Components/MonsterCreatorPopup.gd" type="Script" id=3]
+[ext_resource path="res://Components/CauldronOption.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Fonts/UI/RoundCount.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Resources/Image/Iconos/fantasma-rosa-icono.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Image/cauldron_screen_bg.png" type="Texture" id=7]
+[ext_resource path="res://Resources/Image/Iconos/fantasma-naranja-icono.png" type="Texture" id=8]
+[ext_resource path="res://Resources/Image/Iconos/fantasma-amarillo-icono.png" type="Texture" id=9]
+[ext_resource path="res://Resources/Image/humo-caldero.svg" type="Texture" id=10]
+[ext_resource path="res://Resources/Image/estrellitas-caldero.svg" type="Texture" id=11]
+[ext_resource path="res://Resources/Image/detalle-caldero.svg" type="Texture" id=12]
+[ext_resource path="res://Resources/Image/Iconos/fantasma-azul-icono.png" type="Texture" id=13]
+[ext_resource path="res://Resources/Image/Iconos/fantasma-gris-icono.png" type="Texture" id=14]
+[ext_resource path="res://Fonts/UI/ButtonText.tres" type="DynamicFont" id=15]
+[ext_resource path="res://Resources/SFX/posion-terminada.wav" type="AudioStream" id=16]
 
-[node name="MonsterCreatorPopup" type="ColorRect"]
+[sub_resource type="Animation" id=1]
+resource_name = "Cauldron"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Stars:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -160, -184 ), Vector2( -160, -170 ), Vector2( -160, -184 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Stars2:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -140, -220 ), Vector2( -140, -242 ), Vector2( -140, -220 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Smoke:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.4 ), Vector2( 0.5, 0.45 ), Vector2( 0.5, 0.4 ) ]
+}
+
+[node name="MonsterCreatorPopup" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -384.0
-margin_bottom = -232.0
-rect_pivot_offset = Vector2( -993, -132 )
-color = Color( 0.231373, 0.239216, 0.301961, 1 )
+margin_right = -1280.0
+margin_bottom = -720.0
+script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 208, 248 )
-scale = Vector2( 4, 4 )
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 7 )
+
+[node name="Cauldron" type="Node2D" parent="."]
+position = Vector2( 0, 80 )
+
+[node name="Cauldron" type="Sprite" parent="Cauldron"]
+position = Vector2( -160, -64 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
+
+[node name="Details" type="Sprite" parent="Cauldron"]
+position = Vector2( -160, -64 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 12 )
+
+[node name="Stars" type="Sprite" parent="Cauldron"]
+position = Vector2( -160, -171.05 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Stars2" type="Sprite" parent="Cauldron"]
+position = Vector2( -140, -240.35 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+flip_h = true
+
+[node name="Smoke" type="Sprite" parent="Cauldron"]
+position = Vector2( -144, -160 )
+scale = Vector2( 0.5, 0.440821 )
+texture = ExtResource( 10 )
+offset = Vector2( 0, -256 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cauldron"]
+anims/Cauldron = SubResource( 1 )
+
+[node name="Title" type="RichTextLabel" parent="."]
+margin_left = 144.0
+margin_top = -224.0
+margin_right = 2144.0
+margin_bottom = 276.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 5 )
+bbcode_enabled = true
+bbcode_text = "[center]Brew[/center]"
+text = "Brew"
+scroll_active = false
+
+[node name="CauldronOptionGray" parent="." instance=ExtResource( 4 )]
+margin_left = 94.0
+margin_top = -163.0
+margin_right = 402.0
+margin_bottom = -83.0
+icon = ExtResource( 14 )
+title = "Bespalt Soul"
+description = "Gray soul. Smells like death."
+icon = ExtResource( 14 )
+
+[node name="CauldronOptionRed" parent="." instance=ExtResource( 4 )]
+margin_left = 94.0
+margin_top = -79.0
+margin_right = 402.0
+margin_bottom = 1.0
+icon = ExtResource( 8 )
+title = "Helthin"
+description = "Might heal you. Or make you explode. Who knows."
+icon = ExtResource( 8 )
+
+[node name="CauldronOptionBlue" parent="." instance=ExtResource( 4 )]
+margin_left = 94.0
+margin_top = 5.0
+margin_right = 402.0
+margin_bottom = 85.0
+icon = ExtResource( 13 )
+title = "Mithrite Soul"
+description = "Contains the spirits of the fallen blacksmiths."
+icon = ExtResource( 13 )
+
+[node name="CauldronOptionPink" parent="." instance=ExtResource( 4 )]
+margin_left = 94.0
+margin_top = 89.0
+margin_right = 402.0
+margin_bottom = 169.0
+icon = ExtResource( 6 )
+title = "Chroiyum Soul"
+description = "Tastes like sugar."
+icon = ExtResource( 6 )
+
+[node name="CauldronOptionYellow" parent="." instance=ExtResource( 4 )]
+margin_left = 94.0
+margin_top = 173.0
+margin_right = 402.0
+margin_bottom = 253.0
+icon = ExtResource( 9 )
+title = "Xolyx Soul"
+description = "Something about bananas."
+icon = ExtResource( 9 )
+
+[node name="CraftButton" parent="." instance=ExtResource( 2 )]
+margin_left = -304.0
+margin_top = 184.0
+margin_right = -176.0
+margin_bottom = 232.0
+text = "Brew!"
+
+[node name="CancelButton" parent="." instance=ExtResource( 2 )]
+margin_left = -144.0
+margin_top = 184.0
+margin_right = -16.0
+margin_bottom = 232.0
+text = "Close"
+
+[node name="Blue" type="Sprite" parent="."]
+position = Vector2( -224, -16 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 13 )
+
+[node name="Orange" type="Sprite" parent="."]
+position = Vector2( -96, -16 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
+
+[node name="Gray" type="Sprite" parent="."]
+position = Vector2( -160, 24 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 14 )
+
+[node name="Pink" type="Sprite" parent="."]
+position = Vector2( -201, 50 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 6 )
+
+[node name="Yellow" type="Sprite" parent="."]
+position = Vector2( -113, 47 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 9 )
+
+[node name="GrayCount" type="RichTextLabel" parent="."]
+margin_left = -177.0
+margin_top = 38.0
+margin_right = 203.0
+margin_bottom = 358.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 15 )
+bbcode_enabled = true
+bbcode_text = "[center]3[/center]"
+text = "3"
+scroll_active = false
+
+[node name="BlueCount" type="RichTextLabel" parent="."]
+margin_left = -240.0
+margin_top = 2.00001
+margin_right = 140.0
+margin_bottom = 322.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 15 )
+bbcode_enabled = true
+bbcode_text = "[center]3[/center]"
+text = "3"
+scroll_active = false
+
+[node name="RedCount" type="RichTextLabel" parent="."]
+margin_left = -111.0
+margin_right = 269.0
+margin_bottom = 320.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 15 )
+bbcode_enabled = true
+bbcode_text = "[center]3[/center]"
+text = "3"
+scroll_active = false
+
+[node name="PinkCount" type="RichTextLabel" parent="."]
+margin_left = -217.0
+margin_top = 68.0
+margin_right = 163.0
+margin_bottom = 388.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 15 )
+bbcode_enabled = true
+bbcode_text = "[center]3[/center]"
+text = "3"
+scroll_active = false
+
+[node name="YellowCount" type="RichTextLabel" parent="."]
+margin_left = -130.0
+margin_top = 65.0
+margin_right = 250.0
+margin_bottom = 385.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 15 )
+bbcode_enabled = true
+bbcode_text = "[center]3[/center]"
+text = "3"
+scroll_active = false
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = -15.0

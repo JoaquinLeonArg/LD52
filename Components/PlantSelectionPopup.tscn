@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Scripts/Components/PlantSelectionPopup.gd" type="Script" id=1]
 
-[node name="PlantSelectionPopup" type="ColorRect"]
+[node name="PlantSelectionPopup" type="Control"]
 margin_right = 128.0
-color = Color( 0.231373, 0.239216, 0.301961, 1 )
 script = ExtResource( 1 )

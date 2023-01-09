@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/voice-of-nature-116217.mp3-0c8865536cd5bd583402fb1d1cb8cbd5.mp3str"
+
+[deps]
+
+source_file="res://Resources/Music/voice-of-nature-116217.mp3"
+dest_files=[ "res://.import/voice-of-nature-116217.mp3-0c8865536cd5bd583402fb1d1cb8cbd5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

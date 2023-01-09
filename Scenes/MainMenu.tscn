@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Fonts/UI/ButtonText.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Image/Untitled-1.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Music/ancient-wind-112528.mp3" type="AudioStream" id=4]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+mouse_filter = 1
+color = Color( 0.168627, 0.121569, 0.301961, 1 )
+
+[node name="Start" type="RichTextLabel" parent="."]
+margin_top = 408.0
+margin_right = 12800.0
+margin_bottom = 2808.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Press [color=#edf067][T][/color] for tutorial
+
+Press [color=#edf067][S][/color] to start
+
+Press [color=#edf067][C][/color] for credits[/center]"
+text = "Press [T] for tutorial
+
+Press [S] to start
+
+Press [C] for credits"
+scroll_active = false
+
+[node name="Start2" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_top = 632.0
+margin_right = 12800.0
+margin_bottom = 3032.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]A Ludum Dare 52 game by
+@Astrid and @Fedora[/center]"
+text = "A Ludum Dare 52 game by
+@Astrid and @Fedora"
+scroll_active = false
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 640, 224 )
+texture = ExtResource( 3 )
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+autoplay = true

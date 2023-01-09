@@ -1,32 +1,115 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Components/FarmComponent.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Components/ResourcesComponent.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Components/MenusUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Components/MonsterCreatorPopup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Components/RoundCounter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Components/TransitionButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Components/NextTurnButton.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Components/Potions.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Components/Orders.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/GameScene.gd" type="Script" id=10]
+[ext_resource path="res://Resources/Music/voice-of-nature-116217.mp3" type="AudioStream" id=11]
+[ext_resource path="res://Resources/Music/ancient-wind-112528.mp3" type="AudioStream" id=12]
+[ext_resource path="res://Resources/Image/sky.png" type="Texture" id=13]
+[ext_resource path="res://Resources/Image/path.png" type="Texture" id=14]
+[ext_resource path="res://Resources/Image/farm_bg.png" type="Texture" id=15]
 
 [node name="GameScene" type="Node2D"]
+script = ExtResource( 10 )
 
 [node name="Background" type="ColorRect" parent="."]
 margin_right = 2560.0
 margin_bottom = 720.0
-color = Color( 0.152941, 0.301961, 0.254902, 1 )
+mouse_filter = 1
+color = Color( 0.211765, 0.431373, 0.301961, 1 )
+
+[node name="Sky" type="Sprite" parent="."]
+position = Vector2( 1280, 60 )
+texture = ExtResource( 13 )
+
+[node name="Path" type="Sprite" parent="."]
+position = Vector2( 320, 396 )
+texture = ExtResource( 14 )
+
+[node name="Path2" type="Sprite" parent="."]
+position = Vector2( 936, 401 )
+texture = ExtResource( 14 )
+flip_h = true
+
+[node name="FarmBG" type="Sprite" parent="."]
+position = Vector2( 648, 396 )
+texture = ExtResource( 15 )
+
+[node name="Orders" parent="." instance=ExtResource( 9 )]
+margin_left = 1280.0
+margin_right = 2560.0
+margin_bottom = 720.0
+mouse_filter = 1
 
 [node name="FarmComponent" parent="." instance=ExtResource( 1 )]
-margin_left = 256.0
-margin_top = 128.0
-margin_right = 256.0
-margin_bottom = 128.0
+margin_left = 640.0
+margin_top = 396.0
+margin_right = 640.0
+margin_bottom = 396.0
+
+[node name="TransitionButton" parent="." instance=ExtResource( 6 )]
+margin_left = 1248.0
+margin_right = 1312.0
 
 [node name="UIElements" type="CanvasLayer" parent="."]
+
+[node name="Cauldron" parent="UIElements" instance=ExtResource( 4 )]
+margin_left = 640.0
+margin_top = 1200.0
+margin_right = -640.0
+margin_bottom = 480.0
+
+[node name="RoundCounter" parent="UIElements" instance=ExtResource( 5 )]
+margin_left = 896.0
+margin_top = 32.0
+margin_right = -64.0
+margin_bottom = -640.0
 
 [node name="ResourcesComponent" parent="UIElements" instance=ExtResource( 2 )]
 margin_left = 32.0
 margin_top = 32.0
-margin_right = 160.0
-margin_bottom = 168.0
+margin_right = 544.0
+margin_bottom = 152.0
 
 [node name="MenusUI" parent="UIElements" instance=ExtResource( 3 )]
-margin_left = 22.0
-margin_top = 634.0
-margin_right = -986.0
-margin_bottom = -20.0
+margin_left = 8.0
+margin_top = 468.0
+margin_right = -1272.0
+margin_bottom = -204.0
+
+[node name="NextTurnButton" parent="UIElements" instance=ExtResource( 7 )]
+margin_left = 588.0
+margin_top = 648.0
+margin_right = -564.0
+margin_bottom = -24.0
+
+[node name="Potions" parent="UIElements" instance=ExtResource( 8 )]
+margin_left = 640.0
+margin_top = 1200.0
+margin_right = -640.0
+margin_bottom = 480.0
+
+[node name="Camera" type="Camera2D" parent="."]
+offset = Vector2( 640, 360 )
+current = true
+smoothing_enabled = true
+
+[node name="Viewport" type="Viewport" parent="Camera"]
+size = Vector2( 1280, 720 )
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( -100, 0 )
+stream = ExtResource( 11 )
+autoplay = true
+
+[node name="BGM2" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 2660, 0 )
+stream = ExtResource( 12 )
+autoplay = true

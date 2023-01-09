@@ -1,4 +1,4 @@
-extends ColorRect
+extends Control
 
 const RIGHT_FORMAT = "[right]%s[/right]"
 const COLOR_FORMAT = "[color=%s]%s[/color]"

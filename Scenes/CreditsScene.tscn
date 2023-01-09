@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Scenes/CreditsScene.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Credits/CreditsSubtitle.tres" type="DynamicFont" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Fonts/Credits/CreditsSectionTitle.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Resources/Image/astrid_profile.png" type="Texture" id=5]
 [ext_resource path="res://Resources/Image/fedora_profile.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Image/logo_title.png" type="Texture" id=7]
+[ext_resource path="res://Resources/Image/logo.png" type="Texture" id=8]
 
 [node name="CreditsScene" type="Node2D"]
 script = ExtResource( 1 )
@@ -15,7 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1280.0
 margin_bottom = 720.0
-color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+color = Color( 0.133333, 0.12549, 0.180392, 1 )
 
 [node name="CreditsText" type="Control" parent="."]
 anchor_right = 1.0
@@ -33,8 +35,8 @@ rect_scale = Vector2( 0.1, 0.1 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 custom_fonts/normal_font = ExtResource( 3 )
 bbcode_enabled = true
-bbcode_text = "[center]Game Name Here![/center]"
-text = "Game Name Here!"
+bbcode_text = "[center]Rainbow Souls[/center]"
+text = "Rainbow Souls"
 scroll_active = false
 
 [node name="Subtitle" type="RichTextLabel" parent="CreditsText"]
@@ -48,8 +50,8 @@ rect_scale = Vector2( 0.1, 0.1 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 custom_fonts/normal_font = ExtResource( 2 )
 bbcode_enabled = true
-bbcode_text = "[center]A [color=#ff8844]Ludum Dare 52: Theme[/color] game[/center]"
-text = "A Ludum Dare 52: Theme game"
+bbcode_text = "[center]A [color=#ff8844]Ludum Dare 52: Harvest[/color] game[/center]"
+text = "A Ludum Dare 52: Harvest game"
 scroll_active = false
 
 [node name="CreatorsTitle" type="RichTextLabel" parent="CreditsText"]
@@ -103,7 +105,7 @@ text = "Game design, Graphics, SFX"
 scroll_active = false
 
 [node name="CreatorProfile2" type="Sprite" parent="CreditsText"]
-position = Vector2( 640, 1436 )
+position = Vector2( 640, 1434 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
 
@@ -135,4 +137,74 @@ custom_fonts/normal_font = ExtResource( 2 )
 bbcode_enabled = true
 bbcode_text = "[center][color=#cccccc]Game design, Programming, UI[/color][/center]"
 text = "Game design, Programming, UI"
+scroll_active = false
+
+[node name="AssetsTitle" type="RichTextLabel" parent="CreditsText"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1014.0
+margin_right = 11520.0
+margin_bottom = 1782.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[center]ASSETS[/center]"
+text = "ASSETS"
+scroll_active = false
+
+[node name="Assets" type="RichTextLabel" parent="CreditsText"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1106.0
+margin_right = 11520.0
+margin_bottom = 4696.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]Music[color=#cccccc]
+Ancient Wind - Harumachi Music
+Voice of Nature - Lesfm[/color]
+
+Fonts
+[color=#cccccc]Azonix - mixofx
+Mono, Ronisyswaldi 9, 15 & Architect - RonySetyaSiswaldi
+Ketsiyo - salamahtype[/color][/center]"
+text = "Music
+Ancient Wind - Harumachi Music
+Voice of Nature - Lesfm
+
+Fonts
+Azonix - mixofx
+Mono, Ronisyswaldi 9, 15 & Architect - RonySetyaSiswaldi
+Ketsiyo - salamahtype"
+scroll_active = false
+
+[node name="LosFedorineslogo" type="Sprite" parent="CreditsText"]
+position = Vector2( 408, 2402 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
+
+[node name="LosFedorineslogo2" type="Sprite" parent="CreditsText"]
+position = Vector2( 784, 2402 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 7 )
+
+[node name="Exit" type="RichTextLabel" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 625.0
+margin_top = 685.0
+margin_right = 13425.0
+margin_bottom = 4275.0
+rect_scale = Vector2( 0.05, 0.05 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[right]Press [ESCAPE] to go back[/right]"
+text = "Press [ESCAPE] to go back"
 scroll_active = false

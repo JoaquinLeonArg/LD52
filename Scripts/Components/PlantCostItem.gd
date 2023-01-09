@@ -5,3 +5,4 @@ const FULL_FORMAT = "[color=%s][center]%s[/center][/color]"
 
 func set_values(resource_type: int, amount: int):
 	$Cost.bbcode_text = FULL_FORMAT % [Resources.RESOURCE_COLORS[resource_type], str(amount)]
+	$Sprite.texture = load(Resources.RESOURCE_ICONS[resource_type])

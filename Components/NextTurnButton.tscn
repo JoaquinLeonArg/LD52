@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/Image/button_long.png" type="Texture" id=1]
+[ext_resource path="res://Resources/Image/button-hover_long.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Image/button-pressed_long.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/UI/ButtonText.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Scripts/Components/NextTurnButton.gd" type="Script" id=5]
+[ext_resource path="res://Resources/SFX/select3.wav" type="AudioStream" id=6]
+
+[node name="NextTurnButton" type="TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1152.0
+margin_bottom = -672.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
+script = ExtResource( 5 )
+
+[node name="Text" type="RichTextLabel" parent="."]
+margin_left = 3.0
+margin_top = 9.0
+margin_right = 1203.0
+margin_bottom = 259.0
+rect_scale = Vector2( 0.1, 0.1 )
+rect_clip_content = false
+mouse_filter = 1
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[center]Next day[/center]"
+text = "Next day"
+scroll_active = false
+
+[node name="Warning" type="RichTextLabel" parent="."]
+visible = false
+margin_left = -46.0
+margin_top = -58.0
+margin_right = 2134.0
+margin_bottom = 422.0
+rect_scale = Vector2( 0.1, 0.1 )
+rect_clip_content = false
+mouse_filter = 1
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[center][color=#802114]WARNING: Expiring orders[/color][/center]"
+text = "WARNING: Expiring orders"
+scroll_active = false
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -10.0

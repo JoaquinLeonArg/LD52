@@ -1,4 +1,4 @@
-extends ColorRect
+extends Control
 
 const OPTION_HEIGHT = 32
 

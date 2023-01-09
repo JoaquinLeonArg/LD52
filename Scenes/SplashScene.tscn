@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/Scenes/SplashScene.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Image/godot_logo.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/CreditsScene.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/MainMenu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Fonts/Credits/CreditsSectionTitle.tres" type="DynamicFont" id=4]
 
 [node name="SplashScene" type="Node2D"]

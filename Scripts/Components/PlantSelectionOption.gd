@@ -9,7 +9,7 @@ const X_HARVEST_START = 232
 const X_OFFSET = 14
 
 var plant_cost_item_scene = preload("res://Components/PlantCostItem.tscn")
-var plant_data = null
+var plant_data
 
 
 func set_plant(plant: Plants.Plant):
@@ -30,7 +30,7 @@ func set_plant(plant: Plants.Plant):
 		plant_cost_item.set_values(resource, cost)
 		self.add_child(plant_cost_item)
 		i += 1
-	$Name.bbcode_text = plant.plant_name
+	$Name.bbcode_text = plant.name
 	$Time.bbcode_text = str(plant.grow_time)
 	if not self.plant_data.can_be_planted():
 		self.modulate = DISABLED_MODULATE
@@ -60,9 +60,9 @@ func mouse_entered():
 
 func animate_hover():
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "self_modulate", HOVER_MODULATE, HOVER_DURATION)
+	tween.tween_property($Background, "self_modulate", HOVER_MODULATE, HOVER_DURATION)
 
 
 func animate_dehover():
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "self_modulate", IDLE_MODULATE, HOVER_DURATION)
+	tween.tween_property($Background, "self_modulate", IDLE_MODULATE, HOVER_DURATION)

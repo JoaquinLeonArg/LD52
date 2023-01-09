@@ -9,7 +9,7 @@ script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0.392157 )
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 1 )
 
 [node name="Cost" type="RichTextLabel" parent="."]

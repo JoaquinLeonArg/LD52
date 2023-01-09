@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ancient-wind-112528.mp3-82b5eb2d9f5dc8effac47fef22420215.mp3str"
+
+[deps]
+
+source_file="res://Resources/Music/ancient-wind-112528.mp3"
+dest_files=[ "res://.import/ancient-wind-112528.mp3-82b5eb2d9f5dc8effac47fef22420215.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
